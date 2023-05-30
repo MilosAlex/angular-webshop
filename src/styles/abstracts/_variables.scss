@@ -1,0 +1,52 @@
+// This file contains all Sass variables.
+
+/// Regular font family
+/// @type List
+$text-font-stack: "Open Sans", "Helvetica Neue Light", "Helvetica Neue",
+  "Helvetica", "Arial", sans-serif !default;
+
+/// Code (monospace) font family
+/// @type List
+$code-font-stack: "Courier New", "DejaVu Sans Mono", "Bitstream Vera Sans Mono",
+  "Monaco", monospace !default;
+
+/// Main black
+/// @type Color
+$main-black: #1f2123 !default;
+
+/// Full black
+/// @type Color
+$full-black: #000 !default;
+
+/// Full White
+/// @type Color
+$full-white: #fff !default;
+
+/// Card red
+/// @type Color
+$card-red: #913219 !default;
+
+/// Card green
+/// @type Color
+$card-green: #969928 !default;
+
+/// Card blue
+/// @type Color
+$card-blue: #255f71 !default;
+
+
+/// Border radius
+$border-radius-12: 1.2rem !default;
+
+/// Container's maximum width
+/// @type Length
+$max-width: 1180px !default;
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+  "small": 320px,
+  "medium": 768px,
+  "large": 1024px,
+) !default;

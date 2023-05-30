@@ -1,0 +1,19 @@
+<main class="login">
+  <h1 class="login__title">Login</h1>
+  <form class="login__form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <label class="login__label" htmlFor="username">
+      Username
+    </label>
+    <input class="login__input" formControlName="username" id="username" type="text" placeholder="Peti42" />
+    <label class="login__label" htmlFor="password">
+      Password
+    </label>
+    <input class="login__input" type="password" formControlName="password" id="password" placeholder="asd123" />
+    <button class="login__button" type="submit">
+      Send
+    </button>
+
+    <p class="login__error" *ngIf="loginForm.controls.username?.errors?.['required']">Wrong username!</p>
+    <p class="login__error" *ngIf="loginForm.controls.password?.errors?.['required']">Wrong password!</p>
+  </form>
+</main>

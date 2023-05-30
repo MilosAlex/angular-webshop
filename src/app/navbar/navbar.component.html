@@ -1,0 +1,28 @@
+<div class="navbar">
+  <nav class="navbar__content">
+    <a href="/">
+      <h3 class="navbar__title">Webshop</h3>
+    </a>
+
+    <section *ngIf="userService.getUsername()" class="navbar__status">
+      <h3 class="navbar__name">
+        <span class="navbar__name--extra">Signed in as </span>
+        {{ userService.getUsername() }}
+      </h3>
+      <button class="navbar__status__button" (click)="onLogout()">
+        Logout
+      </button>
+    </section>
+
+    <section *ngIf="!userService.getUsername()" class="navbar__status">
+      <h3 class="navbar__name--extra">Signed out</h3>
+      <a class="navbar__status__button" href="/login">
+        Login
+      </a>
+      <a class="navbar__status__button" href="/register">
+        Register
+      </a>
+    </section>
+
+  </nav>
+</div>

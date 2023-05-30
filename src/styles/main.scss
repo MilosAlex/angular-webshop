@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+// 1. Configuration and helpers
+@import "abstracts/variables", "abstracts/functions", "abstracts/mixins";
+
+// 2. Vendors
+@import "vendors/normalize";
+
+// 3. Base
+@import "base/base", "base/fonts", "base/typography", "base/helpers";
+
+// 4. Layout-related sections
+@import "layout/header", "layout/footer";
+
+// 5. Components
+
+
+// 6. Page-specific styles
+
+
+// 7. Themes
+@import "themes/default";
+
+html {
+  font-size: 62.5%; // 1rem = 10px
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+code {
+  background: #fafafa;
+  border-radius: 5px;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}

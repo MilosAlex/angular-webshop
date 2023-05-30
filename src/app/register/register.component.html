@@ -1,0 +1,19 @@
+<main class="register">
+  <h1 class="register__title">Register</h1>
+  <form class="register__form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <label class="register__label" htmlFor="username">
+      Username
+    </label>
+    <input class="register__input" formControlName="username" id="username" type="text" placeholder="Peti42" />
+    <label class="register__label" htmlFor="password">
+      Password
+    </label>
+    <input class="register__input" type="password" formControlName="password" id="password" placeholder="asd123" />
+    <button class="register__button" type="submit">
+      Send
+    </button>
+
+    <p class="register__error" *ngIf="registerForm.controls.username?.errors?.['required']">Wrong username!</p>
+    <p class="register__error" *ngIf="registerForm.controls.password?.errors?.['required']">Wrong password!</p>
+  </form>
+</main>

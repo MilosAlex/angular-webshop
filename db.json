@@ -1,0 +1,70 @@
+{
+  "expense-items": [
+    {
+      "cost": "100",
+      "date": "2023-04-12T13:14:21.236Z",
+      "title": "New TV",
+      "id": "af0d6560-955c-40e1-9555-a4752ce27103"
+    },
+    {
+      "cost": "150.2",
+      "date": "2022-04-12T13:14:21.236Z",
+      "title": "New Sofa",
+      "id": "e5b9c4ca-1bac-4a80-bfdd-971df21a1ae3"
+    },
+    {
+      "cost": "151.2",
+      "date": "2021-04-11T13:14:21.236Z",
+      "title": "New Laptop",
+      "id": "e5b9c4ca-1bac-4a80-bfdd-971df21a1ae9"
+    },
+    {
+      "cost": "11.2",
+      "date": "2021-04-11T13:14:21.236Z",
+      "title": "headset ",
+      "id": "hOWh32z"
+    },
+    {
+      "cost": "1221.2",
+      "date": "2021-04-11T13:14:21.236Z",
+      "title": "headset ",
+      "id": "_b3yN06"
+    },
+    {
+      "cost": "1221.2",
+      "date": "2021-04-11T13:14:21.236Z",
+      "title": "headset2 ",
+      "id": "xCZ4koR"
+    },
+    {
+      "cost": "1221.2",
+      "date": "2021-04-11T13:14:21.236Z",
+      "title": "headset2 ",
+      "id": "MmrLFdA"
+    },
+    {
+      "cost": "100",
+      "date": "Fri May 05 2023",
+      "title": "teszt1233",
+      "id": "TFyv1x1"
+    }
+  ],
+  "users": [
+    {
+      "username": "aasd",
+      "hash": "$2b$11$MYJnzlVKfezJ.pU90CtVaOr3b3P0RQwYidvX1FoDDFUPPQ9..qh06"
+    },
+    {
+      "username": "asd",
+      "hash": "$2b$11$F.Xr3DrhMmpGvw5mlPlV8eLBEi6AWHBnS6LkBMaGIQ/Wz//kn6lK6"
+    },
+    {
+      "username": "asdasd",
+      "hash": "$2b$11$PqIDdHaV9pK02qL.SYXPduVpDGDiLbkGak5a7Jd8F4XQodG76SqMK"
+    },
+    {
+      "username": "asd2",
+      "hash": "$2b$11$SySehmHGO7aCUfxiLCtfN.eaSaQ5cLj.LBX/r34nBcJIY.N3jeg2S"
+    }
+  ]
+}
