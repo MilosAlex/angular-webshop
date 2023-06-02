@@ -12,15 +12,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ProductDetailModule } from './product-detail/product-detail.module';
+import { ProductItemComponent } from './product-list/components/product-item/product-item.component';
+import { ProductListModule } from './product-list/product-list.module';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    ProductListComponent,
     NavbarComponent,
     RegisterComponent,
-    /* ProductDetailComponent */
+    CartComponent,
   ],
   imports: [
     CommonModule,
@@ -29,6 +31,8 @@ import { ProductDetailModule } from './product-detail/product-detail.module';
     CoreModule,
     FormsModule,
     ReactiveFormsModule,
+    ProductListModule,
+    ProductDetailModule
   ],
   providers: [],
   bootstrap: [AppComponent]

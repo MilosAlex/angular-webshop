@@ -1,2 +1,13 @@
-<p>product-detail works!</p>
-<p>{{ username }}</p>
+<article class="product-detail">
+  <img class="product-detail__image" [src]="img" [alt]="name" height="300" width="300" />
+  <span class="product-detail__name">
+    {{name}}
+  </span>
+  <span class="product-detail__price">
+    {{price}} HUF
+  </span>
+
+  <button class="product-detail__button" (click)="addToCart()">
+    Add to cart
+  </button>
+</article>

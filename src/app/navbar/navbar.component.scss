@@ -32,6 +32,14 @@
     white-space: nowrap;
   }
 
+  &__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
   &__status {
     display: flex;
     flex-direction: row;
@@ -59,6 +67,27 @@
         transition: all 0.2s ease-in-out;
         box-shadow: 0.2rem 0.3rem #fff;
       }
+    }
+  }
+
+  &__cart {
+    &__image {
+      filter: invert(1);
+    }
+
+    &__count {
+      @include typo-poppins-14-semibold(#000);
+      font-weight: 400;
+      height: 2rem;
+      width: 2rem;
+      border-radius: 50%;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
     }
   }
 }

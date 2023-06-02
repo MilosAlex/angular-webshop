@@ -1,0 +1,40 @@
+@import "../../styles/abstracts/variables";
+@import "../../styles/abstracts/mixins";
+
+.product-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  &__image {
+    margin-bottom: 4rem;
+  }
+
+  &__name {
+    @include typo-poppins-24-semibold($full-black);
+  }
+
+  &__price {
+    @include typo-poppins-20-semibold($full-black);
+  }
+
+  &__button {
+    @include typo-poppins-16-semibold($full-black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 50rem;
+    height: 4rem;
+    border-radius: 0.8rem;
+    border: 1px solid $full-black;
+    cursor: pointer;
+    background-color: rgb(192, 192, 192);
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      box-shadow: 0.5rem 0.5rem $full-black;
+    }
+  }
+}

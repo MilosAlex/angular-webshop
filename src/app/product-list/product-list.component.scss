@@ -1,0 +1,27 @@
+@import "../../styles/abstracts/variables";
+@import "../../styles/abstracts/mixins";
+
+.product-list{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 2.4rem;
+  margin-bottom: 2rem;
+
+  &__title{
+    @include typo-poppins-60-semibold();
+    text-align: center;
+  }
+
+  &__products{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 120rem;
+    gap: 2.4rem;
+    flex-wrap: wrap;
+  }
+}

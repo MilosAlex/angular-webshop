@@ -4,25 +4,35 @@
       <h3 class="navbar__title">Webshop</h3>
     </a>
 
-    <section *ngIf="userService.getUsername()" class="navbar__status">
-      <h3 class="navbar__name">
-        <span class="navbar__name--extra">Signed in as </span>
-        {{ userService.getUsername() }}
-      </h3>
-      <button class="navbar__status__button" (click)="onLogout()">
-        Logout
-      </button>
-    </section>
+    <div class="navbar__container">
+      <section *ngIf="userService.getUsername()" class="navbar__status">
+        <h3 class="navbar__name">
+          <span class="navbar__name--extra">Signed in as </span>
+          {{ userService.getUsername() }}
+        </h3>
+        <button class="navbar__status__button" (click)="onLogout()">
+          Logout
+        </button>
+      </section>
 
-    <section *ngIf="!userService.getUsername()" class="navbar__status">
-      <h3 class="navbar__name--extra">Signed out</h3>
-      <a class="navbar__status__button" href="/login">
-        Login
-      </a>
-      <a class="navbar__status__button" href="/register">
-        Register
-      </a>
-    </section>
+      <section *ngIf="!userService.getUsername()" class="navbar__status">
+        <h3 class="navbar__name--extra">Signed out</h3>
+        <a class="navbar__status__button" href="/login">
+          Login
+        </a>
+        <a class="navbar__status__button" href="/register">
+          Register
+        </a>
+      </section>
 
+      <section class="navbar__cart">
+        <a href="/cart">
+          <img class="navbar__cart__image" src="../../assets/cart-icon.svg" alt="cart" height="35" width="35" />
+        </a>
+        <div class="navbar__cart__count">
+          <span>{{ userService.getCartItemsCount() }}</span>
+        </div>
+      </section>
+    </div>
   </nav>
 </div>
