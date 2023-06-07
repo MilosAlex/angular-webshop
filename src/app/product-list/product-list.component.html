@@ -5,5 +5,8 @@
     <div *ngFor="let item of filteredProductList trackBy:trackProductList">
       <app-product-item [name]="item.name" [img]="item.img" [price]="item.price" [id]="item.id"></app-product-item>
     </div>
+    <a *ngIf="username != ''" [routerLink]="['/add-product']" class="product-list__add">
+      <h2 class="product-list__add__title">Add product</h2>
+    </a>
   </section>
 </div>

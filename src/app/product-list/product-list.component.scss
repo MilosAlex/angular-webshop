@@ -14,7 +14,7 @@
     text-align: center;
   }
 
-  &__products{
+  &__products {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -23,5 +23,16 @@
     max-width: 120rem;
     gap: 2.4rem;
     flex-wrap: wrap;
+  }
+
+  &__add  {
+    @include option-button();
+    width: unset;
+
+    &__title {
+      @include typo-poppins-24-semibold();
+      text-align: center;
+      margin: unset;
+    }
   }
 }

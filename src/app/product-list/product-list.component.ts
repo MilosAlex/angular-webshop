@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../product.service';
+import { UserService } from '../shared/user.service';
 
 @Component({
   selector: 'app-product-list',
@@ -10,17 +11,19 @@ import { ProductService } from '../product.service';
 export class ProductListComponent implements OnInit, OnDestroy {
   expensesList: any[] = [];
   filteredProductList: any[] = [];
-  expense: any;
   selectedYear = -1;
-  title = 'expense title';
+  username = '';
 
   constructor(
+    private readonly userService: UserService,
     private readonly productService: ProductService,
     private readonly router: Router,
     private readonly activatedRoute: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
+    this.username = this.userService.getUsername();
+
     this.productService.getAllProducts().subscribe((value) => {
       this.expensesList = value;
       this.filteredProductList = this.expensesList;

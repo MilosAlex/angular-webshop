@@ -4,35 +4,12 @@ import { of, Observable, map } from 'rxjs';
 import { v4 as uuidv4 } from 'uuid';
 import { environment } from '../environments/environment';
 
-const mockExpenses: any[] = [
-  { cost: 100, date: new Date().toISOString(), title: 'New TV', id: uuidv4() },
-  {
-    cost: 150.2,
-    date: new Date().toISOString(),
-    title: 'New Sofa',
-    id: 'e5b9c4ca-1bac-4a80-bfdd-971df21a1ae3',
-  },
-  {
-    cost: 20,
-    date: new Date().toISOString(),
-    title: 'New hairdryer',
-    id: uuidv4(),
-  },
-  {
-    cost: 42,
-    date: new Date('2021/01/02').toString(),
-    title: 'New TV',
-    id: uuidv4(),
-  },
-];
-
 @Injectable({ providedIn: 'root' })
 export class ProductService {
   private readonly backendUrl = environment.backendUrl;
   constructor(private readonly httpClient: HttpClient) {}
 
   getAllProducts(): Observable<any[]> {
-    console.log('backendUrl', this.backendUrl);
     return this.httpClient.get<any[]>(`${this.backendUrl}/products`).pipe(
       map((data) => {
         return data.map((item) => ({
@@ -46,16 +23,27 @@ export class ProductService {
   }
 
   getProductById(id: string): Observable<any | undefined> {
-    return this.httpClient
-      .get<any>(`${this.backendUrl}/products/${id}`)
-      .pipe(
-        map((item) => ({
+    return this.httpClient.get<any>(`${this.backendUrl}/products/${id}`).pipe(
+      map((item) => ({
+        id: item.id,
+        name: item.name,
+        price: item.price,
+        img: item.img,
+      }))
+    );
+  }
+
+  getCartProducts(itemIds: string[]): Observable<any[]> {
+    return this.httpClient.get<any[]>(`${this.backendUrl}/cart?items=${itemIds.join(",")}`).pipe(
+      map((data) => {
+        return data.map((item) => ({
           id: item.id,
           name: item.name,
           price: item.price,
           img: item.img,
-        }))
-      );
+        }));
+      })
+    );
   }
 
   editProduct(expenseItem: Pick<any, 'id' | 'title' | 'cost'>) {

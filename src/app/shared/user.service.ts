@@ -46,9 +46,13 @@ export class UserService {
     this.saveCartItems();
   }
 
-  removeCartItem(id: number): void {
-    this.cartItems.splice(id, 1);
-    this.saveCartItems();
+  removeCartItem(id: string): void {
+    const index = this.cartItems.findIndex((item) => item.id === id);
+    if (index !== -1) {
+      if (this.cartItems[index].quantity > 1) this.cartItems[index].quantity--;
+      else this.cartItems.splice(index, 1);
+      this.saveCartItems();
+    }
   }
 
   getCartItemsCount(): number {

@@ -1,0 +1,116 @@
+@import "../../styles/abstracts/variables";
+@import "../../styles/abstracts/mixins";
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 2.4rem;
+  padding: 0 1rem 2rem 1rem;
+
+  &__title {
+    @include typo-poppins-60-semibold();
+    text-align: center;
+  }
+
+  &__products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 120rem;
+    gap: 2.4rem;
+    flex-wrap: wrap;
+  }
+
+  &__product {
+    @include typo-poppins-16-regular($full-black);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 2.4rem;
+
+    width: 100%;
+    max-width: 50rem;
+    min-width: 30rem;
+    height: 35rem;
+
+    border-radius: 0.8rem;
+    border: 1px solid $full-black;
+
+    &__name {
+      @include typo-poppins-24-semibold();
+      text-align: center;
+      margin: unset;
+    }
+
+    &__price,
+    &__quantity {
+      @include typo-poppins-16-regular();
+      text-align: center;
+      margin: unset;
+    }
+
+    &__button {
+      @include typo-poppins-20-semibold($full-black);
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 4rem;
+      height: 4rem;
+
+      border-radius: 2rem;
+      border: 1px solid $full-black;
+
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        background-color: rgb(192, 192, 192);
+        box-shadow: 0.5rem 0.5rem $full-black;
+      }
+
+      &__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.2rem;
+      }
+    }
+
+    &__order {
+      @include typo-poppins-20-semibold($full-black);
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 100%;
+      max-width: 50rem;
+      min-width: 30rem;
+      height: 4rem;
+
+      border-radius: 2rem;
+      border: 1px solid $full-black;
+
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        background-color: rgb(192, 192, 192);
+        box-shadow: 0.5rem 0.5rem $full-black;
+      }
+    }
+
+    &__empty {
+      @include typo-poppins-20-semibold($full-black);
+    }
+  }
+}

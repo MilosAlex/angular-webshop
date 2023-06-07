@@ -14,7 +14,8 @@ const saltRounds = 11;
 server.use(middlewares);
 
 server.use((req, res, next) => {
-  if (req.url === "/login" || req.url === "/register") {
+  url = req.url.split("?")[0];
+  if (url === "/login" || url === "/register" || url === "/cart" || url.includes("product")) {
     return next();
   }
   const token = req.header("Authorization");
@@ -80,9 +81,15 @@ server.post("/login", (req, res) => {
   }
 });
 
-server.get("/user", (req, res) => {
+server.get("/cart", (req, res) => {
+  console.log(req.query);
+  const itemIds = req.query.items.split(",");
   const db = router.db.value();
-  const user = db.users.find((item) => item.username === username);
+  const items = db.products.filter((item) => itemIds.includes(item.id));
+  res.send(items);
+
+
+  /*const user = db.users.find((item) => item.username === username);
   if (user) {
     validateUser(user.hash, password).then((valid) => {
       if (!valid) {
@@ -100,7 +107,7 @@ server.get("/user", (req, res) => {
     return res.status(422).send({
       errorMessage: "Wrong credentials",
     });
-  }
+  } */
 });
 
 server.use(router);

@@ -1,9 +1,17 @@
-<div class="product-list">
-  <h1 class="product-list__title">Cart</h1>
+<div class="cart">
+  <h1 class="cart__title">Cart</h1>
 
-  <section class="product-list__products">
-    <!-- <div *ngFor="let item of filteredProductList trackBy:trackProductList">
-      <app-product-item [name]="item.name" [img]="item.img" [price]="item.price" [id]="item.id"></app-product-item>
-    </div> -->
+  <section class="cart__products">
+    <div class="cart__product" *ngFor="let item of cartItems trackBy:trackProductList">
+      <h2 class="cart__product__name">{{item.name}}</h2>
+      <p class="cart__product__price">{{item.quantity}} * {{item.price}}HUF ({{item.quantity * item.price}}HUF)</p>
+      <p class="cart__product__quantity">{{item.quantity}} piece{{item.quantity>1 ? "s" : ""}}</p>
+      <div class="cart__product__button__container">
+        <button (click)="removeFromCart(item.id)" class="cart__product__button">-</button>
+        <button (click)="addToCart(item.id)" class="cart__product__button">+</button>
+      </div>
+    </div>
   </section>
+  <button *ngIf="cartItems.length > 0" (click)="clearCart()" class="cart__product__order">Place order</button>
+  <h2 *ngIf="cartItems.length === 0" class="cart__product__empty">Your cart is empty.</h2>
 </div>
