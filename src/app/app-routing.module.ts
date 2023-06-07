@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { RegisterComponent } from './register/register.component';
 import { CartComponent } from './cart/cart.component';
+import { AddProductComponent } from './add-product/add-product.component';
 
 const routes: Routes = [
   { path: '', component: ProductListComponent },
@@ -11,10 +12,10 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'cart', component: CartComponent },
   {
-    path: 'product',
+    path: 'add-product',
     loadChildren: () =>
-      import('./product-detail/product-detail.module').then(
-        (m) => m.ProductDetailModule
+      import('./add-product/add-product.module').then(
+        (m) => m.AddProductModule
       ),
   },
   {

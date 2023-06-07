@@ -15,6 +15,7 @@ import { ProductDetailModule } from './product-detail/product-detail.module';
 import { ProductItemComponent } from './product-list/components/product-item/product-item.component';
 import { ProductListModule } from './product-list/product-list.module';
 import { CartComponent } from './cart/cart.component';
+import { AddProductModule } from './add-product/add-product.module';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { CartComponent } from './cart/cart.component';
     FormsModule,
     ReactiveFormsModule,
     ProductListModule,
-    ProductDetailModule
+    ProductDetailModule,
+    AddProductModule
   ],
   providers: [],
   bootstrap: [AppComponent]

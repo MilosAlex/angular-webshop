@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 import { AuthService } from '../core/auth.service';
 
 @Injectable()
-export class ProductDetailGuard {
+export class AddProductGuard {
   constructor(
     private readonly router: Router,
     private readonly authService: AuthService
@@ -22,6 +22,8 @@ export class ProductDetailGuard {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
+      console.log('AddProductGuard#canActivate called');
+
     if (!this.authService.isLoggedIn()) {
       this.router.navigate(['']);
       return false;
